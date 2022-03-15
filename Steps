@@ -1,0 +1,27 @@
+1> import express and listen to the port by creating an express app.
+2> Create the MVC structure having all the files and folders you want.
+Folders needed
+->routes
+->assets
+  ->css
+  ->js
+  ->images
+->controllers
+->models
+->views
+->config
+
+3> set the view engine and in this example it is ejs
+
+4>use the router folder 
+
+5> setup route folder by creating index_route.js file import express and make router and export router.
+
+6> Set controller files 
+
+
+
+
+Authentication Part
+
+1> install passport js and passport-local

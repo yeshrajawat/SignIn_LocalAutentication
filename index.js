@@ -2,11 +2,14 @@ const express = require('express');
 const port = 8000;
 const app = express();
 const route_dir = require('./routers/index_router');
+const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts') 
 
 
 
+//
 
+app.use(express.urlencoded());
 // Adding Middleware for express-ejs-layouts
 app.use(expressLayouts);
 
