@@ -4,10 +4,26 @@ const app = express();
 const route_dir = require('./routers/index_router');
 const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts') 
+const  passport = require('passport');
+const passportLocal = require('./config/passport_local_strategy');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
-
-
+app.use(cookieParser());
+app.use(session({
+    name:"Demo Sign In",
+    secret:"aguero",
+    saveUninitialized:false,
+    resave:false,
+    cookie:{
+        maxAge:(1000*60*100)
+    }
+}));
 //
+app.use(passport.initialize());
+app.use(session());
+app.use(passport.setAuthenticatedUser);
+
 
 app.use(express.urlencoded());
 // Adding Middleware for express-ejs-layouts

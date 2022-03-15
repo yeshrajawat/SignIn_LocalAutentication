@@ -1,5 +1,11 @@
 const User = require('../models/user_model');
 
+
+module.exports.profile = function(req,res){
+    return res.render('profile',{
+        title:"Profile"
+    });
+}
 module.exports.signIn = function(req,res){
     return res.render('user_sign_in',{
         title:"Sign In"

@@ -25,3 +25,7 @@ Folders needed
 Authentication Part
 
 1> install passport js and passport-local
+2> create passport_local_strategy.js which will initialize the passport js and we will develop the logic to authenticate the user.
+3> Now require config/passport_local_strategy file in index.js so that it can be initialized.
+4> app.use(passport.initialize());
+5> Now add passport.authenticate('local',{failureRedirect:'/users/'}) as callback function in router.get() which is for createUser.
