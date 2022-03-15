@@ -2,6 +2,18 @@ const express = require('express');
 const port = 8000;
 const app = express();
 const route_dir = require('./routers/index_router');
+const expressLayouts = require('express-ejs-layouts') 
+
+
+
+
+// Adding Middleware for express-ejs-layouts
+app.use(expressLayouts);
+
+//extract style and scripts from sub pages into the layout head
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
+
 
 //Setting router mvc routers
 app.use('/',route_dir);
@@ -12,6 +24,7 @@ app.use(express.static('./assets'));
 //Set view engine as ejs 
 app.set('view engine','ejs');
 app.set('views','./views');
+
 
 
 //Listening to the port 
